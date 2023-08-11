@@ -20,46 +20,46 @@ Split the preprocessed data into a features array, X, and a target array, y. Use
 Scale the training and testing features datasets by creating a StandardScaler instance, fitting it to the training data, then using the transform function.
 
 Compile, Train, and Evaluate the Model
-# Define the model - deep neural net, i.e., the number of input features and hidden nodes for each layer.
+ Define the model - deep neural net, i.e., the number of input features and hidden nodes for each layer.
 number_input_features = len(X_train_scaled[0])
 hidden_nodes_layer1 = 10
 hidden_nodes_layer2 = 5
 
 nn_model = tf.keras.models.Sequential()
 
-# First hidden layer
+First hidden layer
 nn_model.add(tf.keras.layers.Dense(units=hidden_nodes_layer1,
              input_dim=number_input_features, activation="tanh"))
 
-# Second hidden layer
+Second hidden layer
 nn_model.add(tf.keras.layers.Dense(
     units=hidden_nodes_layer2, activation="relu"))
 
-# Output layer
+Output layer
 nn_model.add(tf.keras.layers.Dense(units=1, activation="relu"))
 
 
-# Check the structure of the model
+Check the structure of the model
 nn_model.summary()
 
 
 #Optimization:
-# Define the model - deep neural net, i.e., the number of input features and hidden nodes for each layer.
+Define the model - deep neural net, i.e., the number of input features and hidden nodes for each layer.
 units_1 = 75
 units_2 = 30
 input_features = len(X_train_scaled[0])
 nn_model1 = tf.keras.models.Sequential()
 
-# First hidden layer
+First hidden layer
 nn_model1.add(tf.keras.layers.Dense(units=units_1, input_dim = input_features, activation = "relu"))
 
-# Second hidden layer
+Second hidden layer
 nn_model1.add(tf.keras.layers.Dense(units=units_2, activation = "relu"))
 
-# Output layer
+Output layer
 nn_model1.add(tf.keras.layers.Dense(units=1, activation="sigmoid"))
 
-# Check the structure of the model
+Check the structure of the model
 nn_model1.summary()
 
 #RESULT:
